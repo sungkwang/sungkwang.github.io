@@ -45,6 +45,12 @@ margin-right: 10px;
 	font-size:18px;
 }
 
+
+.img-shadow {
+    -webkit-box-shadow: 3px 3px 3px #7C7C7C;
+    box-shadow: 3px 3px 3px #7C7C7C;
+    }
+
 /* Body and structure
 -------------------------------------------------- */
 body {
