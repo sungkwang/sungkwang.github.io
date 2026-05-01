@@ -110,7 +110,7 @@ custom_css: |
                     Investigating efficient data acquisition and reconstruction using **Compressed Sensing** frameworks. This research focuses on multiscale block-based sampling and iterative reconstruction algorithms for high-resolution imaging and dynamic video sequences.
                 </div>
                 <div class="research-links">
-                    [ <a href="{{ '/software.html' | relative_url }}">Software Details</a> ]
+                    [ <a href="{{ '/software.html' | relative_url }}">BCS-SPL Software</a> ]
                 </div>
                 <div class="selected-pubs">
                     <div class="small-label">Selected Publications:</div>
@@ -134,7 +134,7 @@ custom_css: |
                 <div class="selected-pubs">
                     <div class="small-label">Selected Publications:</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "multiscale" | sort: "year" | reverse %}
+                        {% assign theme_pubs = site.publications | where: "theme", "MEAM", "RANN" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -143,7 +143,7 @@ custom_css: |
             </div>
 
             <div class="research-item">
-                <div class="research-title">Data-Driven Design Optimization</div>
+                <div class="research-title">Data-Driven Surrogate Modeling</div>
                 <div class="research-desc">
                     Utilizing machine learning surrogate models and physics-informed neural networks (PINNs) to optimize additive manufacturing processes and structural designs. Our frameworks aim to reduce the computational cost of design exploration in high-dimensional spaces.
                 </div>
@@ -168,7 +168,7 @@ custom_css: |
             <li>
                 <div class="student-name">Justin Xie</div>
                 <div class="student-details">
-                    <span class="status-badge graduated">Graduated Fall 2025</span> 
+                    <span class="status-badge graduated">Graduated Fall 2025</span>
                     <strong>Master's Student</strong> (Major Advisor)
                 </div>
                 <div class="student-thesis">Thesis Topic: "Physics Informed Neural Networks for Additive Manufacturing"</div>
@@ -176,7 +176,7 @@ custom_css: |
             <li>
                 <div class="student-name">Joshua Bassett</div>
                 <div class="student-details">
-                    <span class="status-badge graduated">Graduated Fall 2025</span> 
+                    <span class="status-badge graduated">Graduated Fall 2025</span>
                     <strong>Master's Student</strong> (Co-Major Advisor)
                 </div>
                 <div class="student-thesis">Thesis Topic: "Near Realtime Monitoring of Additive Manufacturing"</div>
@@ -184,7 +184,7 @@ custom_css: |
             <li>
                 <div class="student-name">Kefan Chen, Ph.D.</div>
                 <div class="student-details">
-                    <span class="status-badge graduated">Graduated Fall 2022</span> 
+                    <span class="status-badge graduated">Graduated Fall 2022</span>
                     <strong>Ph.D. Student</strong> (Non-committee Mentor)
                 </div>
                 <div class="student-thesis">Thesis Topic: "Interatomic Potential Development for Si-O and Zn-Fe"</div>
@@ -192,7 +192,7 @@ custom_css: |
             <li>
                 <div class="student-name">Sultana Ababtin, Ph.D.</div>
                 <div class="student-details">
-                    <span class="status-badge graduated">Graduated Fall 2021</span> 
+                    <span class="status-badge graduated">Graduated Fall 2021</span>
                     <strong>Ph.D. Student</strong> (Non-committee Mentor)
                 </div>
                 <div class="student-thesis">Thesis Topic: "Lower Length Scale Study on Carbon Nanotube Reinforced Polyethylene"</div>
@@ -200,7 +200,7 @@ custom_css: |
             <li>
                 <div class="student-name">Andrew Bowman, Ph.D.</div>
                 <div class="student-details">
-                    <span class="status-badge graduated">Graduated Spring 2019</span> 
+                    <span class="status-badge graduated">Graduated Spring 2019</span>
                     <strong>Ph.D. Student</strong> (Non-committee Mentor)
                 </div>
                 <div class="student-thesis">Thesis Topic: "Multiscale Modeling of Polyethylene"</div>
