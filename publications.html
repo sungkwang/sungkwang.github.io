@@ -14,6 +14,7 @@ title: Publications
         {% for pub in cat_pubs %}
             <li>
                 {{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first }}
+                
                 <div class="pub-actions">
                     {% if pub.doi != "" %}
                     <a href="https://doi.org/{{ pub.doi }}" target="_blank" aria-label="Publisher link for {{ pub.bibtex_id }}"><i class="fa-solid fa-link"></i> Publisher</a>
@@ -28,6 +29,10 @@ title: Publications
                     <a href="{{ pub.poster | relative_url }}" target="_blank" aria-label="Download Poster for {{ pub.bibtex_id }}"><i class="fa-solid fa-image"></i> Poster</a>
                     {% endif %}
                     <button type="button" onclick="toggleBibtex('{{ pub.bibtex_id }}')" aria-controls="{{ pub.bibtex_id }}" aria-label="Show BibTeX for {{ pub.bibtex_id }}"><i class="fa-solid fa-quote-right"></i> BibTeX</button>
+                    
+                    {% if pub.theme %}
+                    <span class="theme-label"><i class="fa-solid fa-tags"></i> {{ pub.theme }}</span>
+                    {% endif %}
                 </div>
                 <div id="{{ pub.bibtex_id }}" class="bibtex-block">{{ pub.bibtex }}</div>
             </li>

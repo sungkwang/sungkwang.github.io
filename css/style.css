@@ -196,10 +196,26 @@ h3 {
     font-weight: 500;
 }
 
-.pub-actions a:hover, .pub-actions button:hover {
+.pub-actions button:hover {
     background: var(--accent);
     color: white;
     text-decoration: none;
+}
+
+.theme-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.theme-label i {
+    color: var(--accent);
+    opacity: 0.7;
 }
 
 .bibtex-block {
@@ -278,6 +294,19 @@ footer {
 .status-badge.graduated {
     background-color: var(--accent-light);
     color: var(--accent);
+}
+
+.status-badge.award {
+    background-color: #ffd70033;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.student-desc {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-top: 0.5rem;
+    line-height: 1.5;
 }
 
 .cv-link {

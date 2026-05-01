@@ -118,9 +118,9 @@ custom_css: |
                     <a href="{{ '/software.html' | relative_url }}"><i class="fa-solid fa-code"></i> BCS-SPL Software</a>
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "compressed sensing" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "compressed sensing" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -137,9 +137,9 @@ custom_css: |
                     <a href="{{ '/software.html' | relative_url }}"><i class="fa-solid fa-flask"></i> MEAM-BO Framework</a>
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "MEAM" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "MEAM" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -156,9 +156,9 @@ custom_css: |
                     <a href="{{ '/software.html' | relative_url }}"><i class="fa-solid fa-chart-line"></i> DesOptTool</a>
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "ballistics" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "ballistics" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -172,9 +172,9 @@ custom_css: |
                     Applying machine learning techniques, including feed forward neural networks (FFNNs), to predict spray characteristics and engine combustion performance. This research focuses on high-fidelity modeling of complex reactive flows.
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "ML in combustion" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "ML in combustion" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -188,9 +188,9 @@ custom_css: |
                     Focusing on the development of digital twins and physics-informed neural networks (PINNs) for real-time monitoring of additive manufacturing processes. This research enables the predictive modeling of material behavior during high-speed manufacturing cycles.
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "Advanced Manufacturing" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "Advanced Manufacturing" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -204,9 +204,9 @@ custom_css: |
                     Implementing Prognostics and Health Management (PHM) frameworks and predictive maintenance strategies for industrial systems. This work utilizes data-driven diagnostics to optimize the reliability and maintenance cycles of complex engineering assets.
                 </div>
                 <div class="selected-pubs">
-                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications:</div>
+                    {% assign theme_pubs = site.publications | where: "theme", "Advanced Maintenance" | sort: "year" | reverse %}
+                    <div class="small-label"><i class="fa-solid fa-star"></i> Featured Publications (Total: {{ theme_pubs.size }}):</div>
                     <ul>
-                        {% assign theme_pubs = site.publications | where: "theme", "Advanced Maintenance" | sort: "year" | reverse %}
                         {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
@@ -215,8 +215,9 @@ custom_css: |
             </div>
         </div>
 
-        <h2 class="section-title" style="margin-top: 4rem;">Student Mentoring</h2>
+        <h2 class="section-title" style="margin-top: 4rem;">Student Mentoring & Advising</h2>
 
+        <h3>Major Advising & Mentoring</h3>
         <ul class="group-list">
             <li>
                 <div class="student-header">
@@ -227,6 +228,7 @@ custom_css: |
                     </div>
                 </div>
                 <div class="student-thesis">Thesis: "Physics Informed Neural Networks for Additive Manufacturing"</div>
+                <div class="student-desc">Selected as 2nd place winner in the Master’s Poster competition at the Spring 2024 Graduate Research Symposium.</div>
             </li>
             <li>
                 <div class="student-header">
@@ -236,36 +238,70 @@ custom_css: |
                         <span class="status-badge graduated">Graduated Fall 2025</span>
                     </div>
                 </div>
-                <div class="student-thesis">Thesis: "Near Realtime Monitoring of Additive Manufacturing"</div>
+                <div class="student-thesis">Thesis: "Calibration and validation of the thermal finite element model for ER-120S-G wire arc directed energy deposition using infrared cameras and thermocouples"</div>
+            </li>
+        </ul>
+
+        <h3>Undergraduate Research Mentoring</h3>
+        <ul class="group-list">
+            <li>
+                <div class="student-header">
+                    <div class="student-name">Zijie Chen</div>
+                    <div class="student-details">
+                        <strong>Computer Science</strong> (Undergraduate Researcher)
+                        <span class="status-badge award">Award Winner</span>
+                    </div>
+                </div>
+                <div class="student-desc">Project: <strong>Autoencoder-based Data Denoising for Infrared Camera Images in Additive Manufacturing</strong>. Advised under the support of an ERDC-sponsored additive manufacturing project. Selected as <strong>Overall Winner in Data Science Research</strong> at the Spring 2024 Undergraduate Research Symposium.</div>
             </li>
             <li>
                 <div class="student-header">
-                    <div class="student-name">Kefan Chen, Ph.D.</div>
+                    <div class="student-name">Minjae Cho</div>
                     <div class="student-details">
-                        <strong>Ph.D. Student</strong> (Non-committee Mentor)
-                        <span class="status-badge graduated">Graduated Fall 2022</span>
+                        <strong>Mechanical Engineering</strong> (Undergraduate Researcher)
+                        <span class="status-badge award">Award Winner</span>
                     </div>
                 </div>
-                <div class="student-thesis">Thesis: "Interatomic Potential Development for Si-O and Zn-Fe"</div>
+                <div class="student-desc">Project: <strong>Development of Parameter Dependent conditional Generative Adversarial Network (PDcGAN) Model for Multi-Phase Flow Prediction</strong>. Selected as <strong>Overall Winner in Data Science Research</strong> at the Spring 2023 Undergraduate Research Symposium. (See <a href="https://www.datascience.msstate.edu/research/undergraduate" target="_blank">MSU Data Science Undergraduate Research</a>)</div>
             </li>
             <li>
                 <div class="student-header">
-                    <div class="student-name">Sultana Ababtin, Ph.D.</div>
+                    <div class="student-name">Minjae Cho</div>
                     <div class="student-details">
-                        <strong>Ph.D. Student</strong> (Non-committee Mentor)
-                        <span class="status-badge graduated">Graduated Fall 2021</span>
+                        <strong>Mechanical Engineering</strong> (Undergraduate Researcher)
                     </div>
                 </div>
-                <div class="student-thesis">Thesis: "Lower Length Scale Study on Carbon Nanotube Reinforced Polyethylene"</div>
+                <div class="student-desc">Project: <strong>Development of Generative Adversarial Network (GAN) Model for Multi-Phase Flow Prediction</strong>. Co-advised with Dr. Joonsik Hwang. Prepared a poster for the Spring 2022 Undergraduate Research Symposium, selected as a <strong>Physical Sciences and Engineering Top Rated Project</strong>. </div>
+            </li>
+        </ul>
+
+        <h3>Graduate Committee Service</h3>
+        <ul class="group-list">
+            <li>
+                <div class="student-header">
+                    <div class="student-name">Henan Zhou</div>
+                    <div class="student-details">
+                        <strong>Ph.D. Student</strong> (Mechanical Engineering)
+                    </div>
+                </div>
+                <div class="student-thesis">Dissertation: "Interatomic Potential of Multiphase Materials Using Modified Embedded Atom Method (MEAM) and Artificial Neural Network (RANN)"</div>
             </li>
             <li>
                 <div class="student-header">
-                    <div class="student-name">Andrew Bowman, Ph.D.</div>
+                    <div class="student-name">Ethan Holder</div>
                     <div class="student-details">
-                        <strong>Ph.D. Student</strong> (Non-committee Mentor)
-                        <span class="status-badge graduated">Graduated Spring 2019</span>
+                        <strong>Master's Student</strong> (Mechanical Engineering)
                     </div>
                 </div>
-                <div class="student-thesis">Thesis: "Multiscale Modeling of Polyethylene"</div>
+                <div class="student-thesis">Thesis: "Interactions Between Different Deformation Mechanisms in Magnesium"</div>
+            </li>
+            <li>
+                <div class="student-header">
+                    <div class="student-name">Daniela Telkamp</div>
+                    <div class="student-details">
+                        <strong>Master's Student</strong> (Biomedical Engineering)
+                    </div>
+                </div>
+                <div class="student-thesis">Thesis: "Surrogate Model-based Design Optimization of a Mobile Deployable Structure for Overpressure Load and Vehicular Impact Mitigation"</div>
             </li>
         </ul>
