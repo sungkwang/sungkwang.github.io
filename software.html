@@ -4,34 +4,66 @@ title: Software
 custom_css: |
   <style>
   .software-list {
-            list-style-type: disc;
-            padding-left: 2rem;
+            list-style-type: none;
+            padding: 0;
             line-height: 1.6;
             margin-bottom: 3rem;
         }
-        .software-list li {
-            margin-bottom: 1.5rem;
+        .software-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fdfdfd;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        .software-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .software-desc {
+            margin-bottom: 1rem;
         }
   </style>
 ---
 
 <h2 class="section-title">Software</h2>
 
-        <h3>Open Source Codes</h3>
-        <ul class="software-list">
-            <li>
-                <strong>MEAM-BO</strong>: Molecular dynamics (parallel) simulation code for organo-metallic composite systems.<br>
-                [ <a href="https://github.com/sungkwang/MEAM-BO" target="_blank">GitHub Repository</a> ]
-            </li>
-            <li>
-                <strong>DesOptTool</strong>: Design and Optimization Tool.<br>
-                [ <a href="https://github.com/sungkwang/DesOptTool" target="_blank">GitHub Repository</a> ]
-            </li>
-        </ul>
+<h3>Open Source Codes</h3>
+<div class="software-list">
+    {% assign softs = site.software | sort: "priority" %}
+    {% for item in softs %}
+    <div class="software-item">
+        <div class="software-name">{{ item.name }}</div>
+        <div class="software-desc">
+            <strong>{{ item.description }}</strong><br>
+            {{ item.content }}
+        </div>
+        <div class="software-links">
+            [ <a href="{{ item.github }}" target="_blank">GitHub Repository</a> ]
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
-        <h3>Software Manuals</h3>
-        <ol class="pub-list">
-            <li>
-                Sungkwang Mun, S. Adibi, D. Dickel, and L. Bian, <em>"PINN for Predicting the Thermal Evolution of WAAM Proces"</em>, Army Research Lab, 2020. Software User Manual.
-            </li>
-        </ol>
+<h3>Software Manuals</h3>
+{% assign manuals = site.publications | where: "category", "Software Manuals" | sort: "year" | reverse %}
+{% if manuals.size > 0 %}
+<ol class="pub-list">
+    {% for pub in manuals %}
+    <li>
+        {{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first }}
+        <div class="pub-actions">
+            {% if pub.pdf %}
+            [<a href="{{ pub.pdf | relative_url }}" target="_blank">PDF</a>]
+            {% endif %}
+            [<button type="button" onclick="toggleBibtex('{{ pub.bibtex_id }}')">BibTeX</button>]
+        </div>
+        <div id="{{ pub.bibtex_id }}" class="bibtex-block">{{ pub.bibtex }}</div>
+    </li>
+    {% endfor %}
+</ol>
+{% else %}
+<p>No software manuals available.</p>
+{% endif %}

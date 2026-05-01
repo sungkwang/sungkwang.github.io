@@ -5,6 +5,8 @@ url: "https://sungkwang.github.io"
 collections:
   publications:
     output: false
+  software:
+    output: false
   projects:
     output: true
 
