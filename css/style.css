@@ -95,7 +95,7 @@ a:hover {
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 16px;
+    border-radius: 20px !important;
     object-fit: cover;
     margin-bottom: 2rem;
     border: 4px solid white;
