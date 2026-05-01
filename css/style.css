@@ -95,7 +95,7 @@ a:hover {
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 16px;
     object-fit: cover;
     margin-bottom: 2rem;
     border: 4px solid white;
@@ -224,4 +224,24 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.cv-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--accent);
+    color: white !important;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.cv-link:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    text-decoration: none;
 }
