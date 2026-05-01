@@ -18,6 +18,15 @@ title: Publications
                     {% if pub.doi != "" %}
                     [<a href="https://doi.org/{{ pub.doi }}" target="_blank">Publisher</a>]
                     {% endif %}
+                    {% if pub.pdf %}
+                    [<a href="{{ pub.pdf | relative_url }}" target="_blank">PDF</a>]
+                    {% endif %}
+                    {% if pub.presentation %}
+                    [<a href="{{ pub.presentation | relative_url }}" target="_blank">Presentation</a>]
+                    {% endif %}
+                    {% if pub.poster %}
+                    [<a href="{{ pub.poster | relative_url }}" target="_blank">Poster</a>]
+                    {% endif %}
                     [<button type="button" onclick="toggleBibtex('{{ pub.bibtex_id }}')">BibTeX</button>]
                 </div>
                 <div id="{{ pub.bibtex_id }}" class="bibtex-block">{{ pub.bibtex }}</div>

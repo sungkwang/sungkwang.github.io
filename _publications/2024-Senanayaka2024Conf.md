@@ -5,7 +5,6 @@ category: "Conference Papers"
 year: 2024
 doi: "10.36001/phmconf.2024.v16i1.3871"
 ---
-
 {% capture bibtex %}
 @inproceedings{Senanayaka2024Conf,
   author = {Ayantha Senanayaka Mudiyanselage and Qing Liu and Nayeon Lee and Sungkwang Mun and Amin Amirlatifi and Joseph Jabour and Thomas Arnold and Maria Seale},

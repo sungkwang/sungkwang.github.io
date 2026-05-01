@@ -5,7 +5,6 @@ category: "Journal Articles"
 year: 2024
 doi: "10.1007/s00170-024-14080-y"
 ---
-
 {% capture bibtex %}
 @article{Senanayaka2024,
   author = {Ayantha Senanayaka and Philku Lee and Nayeon Lee and Charles Dickerson and Anton Netchaev and Sungkwang Mun},
