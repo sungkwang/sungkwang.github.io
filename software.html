@@ -41,7 +41,12 @@ custom_css: |
             {{ item.content }}
         </div>
         <div class="software-links">
+            {% if item.github %}
             [ <a href="{{ item.github }}" target="_blank">GitHub Repository</a> ]
+            {% endif %}
+            {% if item.website %}
+            [ <a href="{{ item.website }}" target="_blank">Project Website</a> ]
+            {% endif %}
         </div>
     </div>
     {% endfor %}

@@ -74,6 +74,30 @@ custom_css: |
             background-color: #f5f5f5;
             color: #666;
         }
+        .selected-pubs {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #eee;
+        }
+        .small-label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+        .selected-pubs ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+        .selected-pubs li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
   </style>
 ---
 
@@ -86,8 +110,16 @@ custom_css: |
                     Investigating efficient data acquisition and reconstruction using **Compressed Sensing** frameworks. This research focuses on multiscale block-based sampling and iterative reconstruction algorithms for high-resolution imaging and dynamic video sequences.
                 </div>
                 <div class="research-links">
-                    [ <a href="https://jamesfowler.net/BCSSPL/" target="_blank">BCS-SPL Project</a> ]
-                    [ <a href="{{ '/publications.html' | relative_url }}">Related Publications</a> ]
+                    [ <a href="{{ '/software.html' | relative_url }}">Software Details</a> ]
+                </div>
+                <div class="selected-pubs">
+                    <div class="small-label">Selected Publications:</div>
+                    <ul>
+                        {% assign theme_pubs = site.publications | where: "theme", "imaging" | sort: "year" | reverse %}
+                        {% for pub in theme_pubs limit: 3 %}
+                        <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
 
@@ -98,18 +130,34 @@ custom_css: |
                 </div>
                 <div class="research-links">
                     [ <a href="{{ '/software.html' | relative_url }}">MEAM-BO Framework</a> ]
-                    [ <a href="{{ '/publications.html' | relative_url }}">Related Publications</a> ]
+                </div>
+                <div class="selected-pubs">
+                    <div class="small-label">Selected Publications:</div>
+                    <ul>
+                        {% assign theme_pubs = site.publications | where: "theme", "multiscale" | sort: "year" | reverse %}
+                        {% for pub in theme_pubs limit: 3 %}
+                        <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
 
             <div class="research-item">
-                <div class="research-title">AI-Driven Design Optimization</div>
+                <div class="research-title">Data-Driven Design Optimization</div>
                 <div class="research-desc">
                     Utilizing machine learning surrogate models and physics-informed neural networks (PINNs) to optimize additive manufacturing processes and structural designs. Our frameworks aim to reduce the computational cost of design exploration in high-dimensional spaces.
                 </div>
                 <div class="research-links">
                     [ <a href="{{ '/software.html' | relative_url }}">DesOptTool</a> ]
-                    [ <a href="{{ '/publications.html' | relative_url }}">Related Publications</a> ]
+                </div>
+                <div class="selected-pubs">
+                    <div class="small-label">Selected Publications:</div>
+                    <ul>
+                        {% assign theme_pubs = site.publications | where: "theme", "ai" | sort: "year" | reverse %}
+                        {% for pub in theme_pubs limit: 3 %}
+                        <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>

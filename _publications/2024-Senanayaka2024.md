@@ -4,6 +4,7 @@ bibtex_id: Senanayaka2024
 category: "Journal Articles"
 year: 2024
 doi: "10.1007/s00170-024-14080-y"
+theme: "ai"
 ---
 {% capture bibtex %}
 @article{Senanayaka2024,
