@@ -226,6 +226,60 @@ footer {
     color: var(--text-muted);
 }
 
+/* Student Mentoring */
+.group-list {
+    list-style: none;
+    padding: 0;
+}
+
+.group-list li {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.student-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.student-details {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.student-thesis {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+.status-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+.status-badge.graduated {
+    background-color: var(--accent-light);
+    color: var(--accent);
+}
+
 .cv-link {
     display: inline-flex;
     align-items: center;

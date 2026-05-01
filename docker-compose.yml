@@ -1,0 +1,39 @@
+# In order to use Jekyll server locally through Docker:
+#
+# First, ensure your Gemfile has the correct source and dependencies:
+# cat << 'EOF' > Gemfile
+# source 'https://rubygems.org'
+# gem 'github-pages', group: :jekyll_plugins
+# EOF
+#
+# Next, add webrick to the Gemfile:
+# docker-compose run --rm jekyll bundle add webrick
+#
+# Then, start the server:
+# docker-compose up
+#
+# Open http://localhost:4000 in your browser.
+#
+# In order to stop the server:
+# docker-compose down
+
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    command: bundle exec jekyll serve --watch --drafts --force_polling --host 0.0.0.0
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+      - vendor_cache:/usr/local/bundle
+    environment:
+      JEKYLL_UID: 1000
+      JEKYLL_GID: 1000
+
+volumes:
+  vendor_cache:
+
+# Notes:
+# --force_polling: This is critical when using Docker with WSL. It ensures Jekyll detects file changes made in Windows and rebuilds the site automatically.
+# --host 0.0.0.0: Binds the server so it is accessible from your Windows browser.
+# vendor_cache: This named volume stores the installed Ruby gems. It drastically speeds up subsequent boots because it doesn't have to download dependencies every time you spin up the container.

@@ -1,4 +1,7 @@
 _site/
-data/temp_venv/
-data/cv_mun.txt
 .agent/
+
+# Docker and Jekyll local caches
+.jekyll-cache/
+.jekyll-metadata
+vendor_cache/
