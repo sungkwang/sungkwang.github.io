@@ -1,0 +1,12 @@
+title: Sungkwang Mun
+description: "Personal Website of Sungkwang Mun, Ph.D."
+url: "https://sungkwang.github.io"
+
+collections:
+  publications:
+    output: false
+  projects:
+    output: true
+
+# Build settings
+markdown: kramdown

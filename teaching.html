@@ -1,0 +1,74 @@
+---
+layout: default
+title: Teaching
+custom_css: |
+  <style>
+  .teaching-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+        .teaching-list li {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .course-code {
+            font-family: var(--font-sans);
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 140px;
+            flex-shrink: 0;
+        }
+        .course-details {
+            flex-grow: 1;
+        }
+        .course-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        .course-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+        .eval-badge {
+            display: inline-block;
+            background-color: #edf7ed;
+            color: #2e7d32;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-left: 1rem;
+            font-weight: bold;
+        }
+  </style>
+---
+
+<h2 class="section-title">Teaching Experience</h2>
+
+        <ul class="teaching-list">
+            <li>
+                <div class="course-code">ECE 3443</div>
+                <div class="course-details">
+                    <div class="course-title">Signals and Systems</div>
+                    <div class="course-meta">
+                        Instructor &bull; Spring 2020
+                        <span class="eval-badge">Evaluation: 4.6 / 5.0</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="course-code">ECE 3714</div>
+                <div class="course-details">
+                    <div class="course-title">Digital Device Lab</div>
+                    <div class="course-meta">
+                        Instructor / Teaching Assistant &bull; Spring/Fall 2010&ndash;2012
+                    </div>
+                </div>
+            </li>
+        </ul>
