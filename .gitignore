@@ -1,4 +1,4 @@
 _site/
 data/temp_venv/
 data/cv_mun.txt
-tmp/
+.agent/
