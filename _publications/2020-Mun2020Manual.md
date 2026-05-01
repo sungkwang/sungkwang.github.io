@@ -4,6 +4,7 @@ bibtex_id: Mun2020Manual
 category: "Software Manuals"
 year: 2020
 doi: ""
+theme: "advanced manufacturing"
 ---
 
 {% capture bibtex %}

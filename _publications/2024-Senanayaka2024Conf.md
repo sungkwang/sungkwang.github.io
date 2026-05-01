@@ -4,7 +4,7 @@ bibtex_id: Senanayaka2024Conf
 category: "Conference Papers"
 year: 2024
 doi: "10.36001/phmconf.2024.v16i1.3871"
-theme: "ai"
+theme: "Advanced Maintenance"
 ---
 {% capture bibtex %}
 @inproceedings{Senanayaka2024Conf,
