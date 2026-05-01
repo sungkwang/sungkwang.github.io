@@ -9,12 +9,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="{{ '/css/style.css' | relative_url }}" rel="stylesheet">
     {{ page.custom_css }}
 </head>
 <body>
-    <nav class="nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav class="nav" aria-label="Main Navigation">
         <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %}>Home</a>
         <a href="{{ '/publications.html' | relative_url }}" {% if page.url contains 'publications' %}class="active"{% endif %}>Publications</a>
         <a href="{{ '/software.html' | relative_url }}" {% if page.url contains 'software' %}class="active"{% endif %}>Software</a>
@@ -22,7 +25,7 @@
         <a href="{{ '/teaching.html' | relative_url }}" {% if page.url contains 'teaching' %}class="active"{% endif %}>Teaching</a>
     </nav>
     
-    <main class="container">
+    <main id="main-content" class="container">
         {{ content }}
     </main>
 
@@ -36,10 +39,13 @@
     <script>
         function toggleBibtex(id) {
             var el = document.getElementById(id);
+            var btn = document.querySelector('[aria-controls="' + id + '"]');
             if (el.style.display === "block") {
                 el.style.display = "none";
+                if (btn) btn.setAttribute('aria-expanded', 'false');
             } else {
                 el.style.display = "block";
+                if (btn) btn.setAttribute('aria-expanded', 'true');
             }
         }
     </script>

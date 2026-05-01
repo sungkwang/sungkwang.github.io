@@ -42,10 +42,10 @@ custom_css: |
         </div>
         <div class="software-links">
             {% if item.github %}
-            [ <a href="{{ item.github }}" target="_blank">GitHub Repository</a> ]
+            [ <a href="{{ item.github }}" target="_blank" aria-label="GitHub Repository for {{ item.name }}">GitHub Repository</a> ]
             {% endif %}
             {% if item.website %}
-            [ <a href="{{ item.website }}" target="_blank">Project Website</a> ]
+            [ <a href="{{ item.website }}" target="_blank" aria-label="Project Website for {{ item.name }}">Project Website</a> ]
             {% endif %}
         </div>
     </div>
@@ -61,9 +61,9 @@ custom_css: |
         {{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first }}
         <div class="pub-actions">
             {% if pub.pdf %}
-            [<a href="{{ pub.pdf | relative_url }}" target="_blank">PDF</a>]
+            [<a href="{{ pub.pdf | relative_url }}" target="_blank" aria-label="Download PDF Manual for {{ pub.bibtex_id }}">PDF</a>]
             {% endif %}
-            [<button type="button" onclick="toggleBibtex('{{ pub.bibtex_id }}')">BibTeX</button>]
+            [<button type="button" onclick="toggleBibtex('{{ pub.bibtex_id }}')" aria-controls="{{ pub.bibtex_id }}" aria-label="Show BibTeX for {{ pub.bibtex_id }}">BibTeX</button>]
         </div>
         <div id="{{ pub.bibtex_id }}" class="bibtex-block">{{ pub.bibtex }}</div>
     </li>
