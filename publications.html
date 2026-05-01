@@ -19,6 +19,9 @@ title: Publications
                     {% if pub.doi != "" %}
                     <a href="https://doi.org/{{ pub.doi }}" target="_blank" aria-label="Publisher link for {{ pub.bibtex_id }}"><i class="fa-solid fa-link"></i> Publisher</a>
                     {% endif %}
+                    {% if pub.external_url %}
+                    <a href="{{ pub.external_url }}" target="_blank" aria-label="External link for {{ pub.bibtex_id }}"><i class="fa-solid fa-arrow-up-right-from-square"></i> External Link</a>
+                    {% endif %}
                     {% if pub.pdf %}
                     <a href="{{ pub.pdf | relative_url }}" target="_blank" aria-label="Download PDF for {{ pub.bibtex_id }}"><i class="fa-solid fa-file-pdf"></i> PDF</a>
                     {% endif %}

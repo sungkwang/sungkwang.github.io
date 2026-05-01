@@ -17,9 +17,11 @@ To add a paper, poster, or presentation:
    doi: "10.1088/..."         # Optional
    pdf: "pub/YourFile.pdf"    # Optional: Path to file in /pub folder
    theme: "MEAM"              # Linking keyword for the Research page
+   bibtex: |                  # BibTeX entry (indented)
+     @article{...}
    ---
    ```
-3. Add the BibTeX entry in the `{% capture bibtex %}` block and the formatted HTML citation in the `<div class="pub-entry">` block.
+3. Add the formatted HTML citation in the `<div class="pub-entry">` block.
 
 ### 2. Updating Research Themes
 The **Research** page automatically pulls the latest 3 publications for each theme.
