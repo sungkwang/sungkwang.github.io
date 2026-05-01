@@ -19,9 +19,13 @@ To add a paper, poster, or presentation:
    theme: "MEAM"              # Linking keyword for the Research page
    bibtex: |                  # BibTeX entry (indented)
      @article{...}
+   url: "https://..."         # Optional: External project/article link (for journal articles)
    ---
+   <div class="pub-entry">
+     Formatted citation text goes here.
+   </div>
    ```
-3. Add the formatted HTML citation in the `<div class="pub-entry">` block.
+3. The formatted citation must be placed inside the `<div class="pub-entry">` block for it to appear in the publications list.
 
 ### 2. Updating Research Themes
 The **Research** page automatically pulls the latest 3 publications for each theme.
