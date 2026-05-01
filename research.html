@@ -183,17 +183,31 @@ custom_css: |
             </div>
 
             <div class="research-item">
-                <div class="research-title">Advanced Manufacturing and Maintenance</div>
+                <div class="research-title">Advanced Manufacturing</div>
                 <div class="research-desc">
-                    Focusing on the development of digital twins and predictive maintenance strategies using physics-informed neural networks (PINNs) for advanced manufacturing systems. This includes real-time monitoring of additive manufacturing processes and the implementation of PHM (Prognostics and Health Management) frameworks.
+                    Focusing on the development of digital twins and physics-informed neural networks (PINNs) for real-time monitoring of additive manufacturing processes. This research enables the predictive modeling of material behavior during high-speed manufacturing cycles.
                 </div>
                 <div class="selected-pubs">
                     <div class="small-label">Selected Publications:</div>
                     <ul>
-                        {% assign am_pubs = site.publications | where: "theme", "Advanced Manufacturing" %}
-                        {% assign maint_pubs = site.publications | where: "theme", "Advanced Maintenance" %}
-                        {% assign combined_pubs = am_pubs | concat: maint_pubs | sort: "year" | reverse %}
-                        {% for pub in combined_pubs limit: 4 %}
+                        {% assign theme_pubs = site.publications | where: "theme", "Advanced Manufacturing" | sort: "year" | reverse %}
+                        {% for pub in theme_pubs limit: 3 %}
+                        <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="research-title">Advanced Maintenance</div>
+                <div class="research-desc">
+                    Implementing Prognostics and Health Management (PHM) frameworks and predictive maintenance strategies for industrial systems. This work utilizes data-driven diagnostics to optimize the reliability and maintenance cycles of complex engineering assets.
+                </div>
+                <div class="selected-pubs">
+                    <div class="small-label">Selected Publications:</div>
+                    <ul>
+                        {% assign theme_pubs = site.publications | where: "theme", "Advanced Maintenance" | sort: "year" | reverse %}
+                        {% for pub in theme_pubs limit: 3 %}
                         <li>{{ pub.content | split: '<div class="pub-entry">' | last | split: '</div>' | first | strip_html | truncate: 120 }}</li>
                         {% endfor %}
                     </ul>
