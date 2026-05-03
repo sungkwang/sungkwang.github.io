@@ -12,3 +12,6 @@ collections:
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-sitemap
